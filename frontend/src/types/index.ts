@@ -26,6 +26,7 @@ export interface Expense {
   category: string;
   date: string;
   notes: string;
+  type: 'expense' | 'income';
   createdAt: string;
 }
 
