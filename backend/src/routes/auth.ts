@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../models/User';  // ✅ Remove .js extension
+import User from '../models/User';  
 
 const router = Router();
 
@@ -55,7 +55,7 @@ router.post('/register', async (req, res) => {
 
 // Login
 router.post('/login', async (req, res) => {
-  console.log('=== LOGIN ATTEMPT ===');
+  
   const { email, password } = req.body;
   
   try {

@@ -3,7 +3,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import authRoutes from "./routes/auth";
-
+import expenseRoutes from "./routes/expense";
 dotenv.config();
 
 const app = express();
@@ -40,7 +40,7 @@ mongoose.connect(MONGODB_URI)
 
 
 app.use('/api/auth', authRoutes);
-
+app.use('/api/expenses', expenseRoutes);
 
 
 
