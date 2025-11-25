@@ -41,32 +41,37 @@ const Login: React.FC = () => {
     <div className="auth-container">
       <div className="auth-card">
         <h2>Welcome Back</h2>
+        
+        {error && <div className="error-message">{error}</div>}
+
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Email</label>
+            <label htmlFor="email">Email</label>
             <input
+              id="email"
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
               placeholder="Enter email"
+              autoComplete="email"
             />
           </div>
 
           <div className="form-group">
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
             <input
+              id="password"
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               required
               placeholder="Enter password"
+              autoComplete="current-password"
             />
           </div>
-
-          {error && <div className="error-message">{error}</div>}
 
           <button type="submit" disabled={loading} className="btn-primary">
             {loading ? 'Logging in...' : 'Login'}
